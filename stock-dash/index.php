@@ -94,7 +94,7 @@ if (!isset($_SESSION['admin_id']))
             <div class="card-header">
               <div class="card-title">Recent Holdings</div>
               <div class="actions">
-                <a class="btn btn-ghost" href="portfolio.html">Manage</a>
+                <a class="btn btn-ghost" href="portfolio.php">Manage</a>
               </div>
             </div>
 
@@ -119,7 +119,7 @@ if (!isset($_SESSION['admin_id']))
             <div class="card-header">
               <div class="card-title">Quick Research</div>
               <div class="actions">
-                <a class="btn btn-ghost" href="research.html">Open</a>
+                <a class="btn btn-ghost" href="research.php">Open</a>
               </div>
             </div>
 
