@@ -39,7 +39,7 @@ function wireGlobalSearch() {
   const go = () => {
     const q = (input.value || "").trim();
     if (!q) return;
-    window.location.href = `research.html?q=${encodeURIComponent(q)}`;
+    window.location.href = `research.php?q=${encodeURIComponent(q)}`;
   };
 
   btn.addEventListener("click", go);
