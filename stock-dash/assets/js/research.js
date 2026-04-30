@@ -97,7 +97,7 @@ function buildNewsApiUrl() {
 
   if (state.source)params.set("sources", state.source);
   
-//  return `https://newsapi.org/v2/everything?${params.toString()}`;
+  return `https://newsapi.org/v2/everything?${params.toString()}`;
 }
 
 async function fetchNews() {
