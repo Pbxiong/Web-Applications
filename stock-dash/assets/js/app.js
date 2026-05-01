@@ -1,17 +1,25 @@
-import { loadHoldings } from "./storage.js";
 import { computeManualValue, fmtMoney, safeText } from "./ui.js";
 import { initSidebarToggle } from "./sidebar.js";
 
 initSidebarToggle();
-
-const holdings = loadHoldings();
 
 const totalValueEl = document.getElementById("metricTotalValue");
 const activeCountEl = document.getElementById("metricActiveCount");
 const archivedCountEl = document.getElementById("metricArchivedCount");
 const recentTable = document.getElementById("recentHoldingsTable");
 
-function renderHome() {
+async function loadFromDatabase() {
+  const response = await fetch("api/get_holdings.php");
+  const result = await response.json();
+
+  if (!response.ok || !result.success) {
+    throw new Error(result.message || "Failed to load holdings");
+  }
+
+  return result.holdings;
+}
+
+function renderHome(holdings) {
   const active = holdings.filter(h => !h.archived);
   const archived = holdings.filter(h => !!h.archived);
 
@@ -39,7 +47,7 @@ function wireGlobalSearch() {
   const go = () => {
     const q = (input.value || "").trim();
     if (!q) return;
-    window.location.href = `research.html?q=${encodeURIComponent(q)}`;
+    window.location.href = `research.php?q=${encodeURIComponent(q)}`;
   };
 
   btn.addEventListener("click", go);
@@ -48,5 +56,15 @@ function wireGlobalSearch() {
   });
 }
 
-renderHome();
+async function initHome() {
+  try {
+    const holdings = await loadFromDatabase();
+    console.log("DATA FROM DB:", holdings); // 👈 add this
+    renderHome(holdings);
+  } catch (err) {
+    console.error(err);
+  }
+}
+
 wireGlobalSearch();
+initHome();
