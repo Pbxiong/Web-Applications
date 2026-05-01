@@ -3,9 +3,7 @@ import { initSidebarToggle } from "./sidebar.js";
 
 initSidebarToggle();
 
-// maybe this one https://newsapi.org
-
-const NEWS_API_KEY = ""; //keys
+const NEWS_API_KEY = "a2b82043274343849e4bb0db205f98f5"; //keys
 
 const queryInput = document.getElementById("queryInput");
 const searchBtn = document.getElementById("searchBtn");
@@ -97,7 +95,7 @@ function buildNewsApiUrl() {
 
   if (state.source)params.set("sources", state.source);
   
-//  return `https://newsapi.org/v2/everything?${params.toString()}`;
+return `https://newsapi.org/v2/everything?${params.toString()}`;
 }
 
 async function fetchNews() {
@@ -114,7 +112,7 @@ async function fetchNews() {
     return;
   }
 
-  setStatus(`Using NewsAPI. If errors, run Live Server (http://localhost...).`);
+  setStatus(`Using NewsAPI.`);
 
   const url = buildNewsApiUrl();
 
@@ -134,7 +132,7 @@ async function fetchNews() {
     renderArticles(articles);
   } catch (err) {
     setStatus(`<span style="color:#fb7185">Error:</span> ${safeText(err.message)}`);
-    clearResults("Failed to load news. Check your API key and run via Live Server.");
+    clearResults("Failed to load news. Check your API key.");
   }
 }
 
