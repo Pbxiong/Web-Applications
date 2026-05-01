@@ -63,7 +63,7 @@ if (!isset($_SESSION['admin_id']))
 
         <div class="topbar-right">
           <div class="search">
-            <input id="queryInput" type="text" placeholder="Ticker or company" />
+            <input id="queryInput" type="text" placeholder="Search by ticker" />
             <button id="searchBtn" class="btn btn-primary">Search</button>
           </div>
         </div>
