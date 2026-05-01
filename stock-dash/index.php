@@ -53,7 +53,7 @@ if (!isset($_SESSION['admin_id']))
 
         <div class="topbar-right">
           <div class="search">
-            <input id="globalSearch" type="text" placeholder="Search ticker" />
+            <input id="globalSearch" type="text" placeholder="Search by ticker" />
             <button id="globalSearchBtn" class="btn btn-primary">Search</button>
           </div>
         </div>
@@ -67,7 +67,7 @@ if (!isset($_SESSION['admin_id']))
               <div class="chip chip-blue">Overview</div>
             </div>
             <div class="metric" id="metricTotalValue">$0.00</div>
-            <div class="muted">Based on your stored holdings (shares × avg cost).</div>
+            <div class="muted">(shares × avg cost)</div>
           </div>
 
           <div class="card">
@@ -76,7 +76,7 @@ if (!isset($_SESSION['admin_id']))
               <div class="chip chip-green">Holdings</div>
             </div>
             <div class="metric" id="metricActiveCount">0</div>
-            <div class="muted">Archived holdings aren’t counted as active.</div>
+            <div class="muted">Active Holdings</div>
           </div>
 
           <div class="card">
@@ -85,7 +85,7 @@ if (!isset($_SESSION['admin_id']))
               <div class="chip chip-gray">History</div>
             </div>
             <div class="metric" id="metricArchivedCount">0</div>
-            <div class="muted">Keep records without cluttering your view.</div>
+            <div class="muted">Archived Holdings</div>
           </div>
         </div>
 
@@ -94,7 +94,7 @@ if (!isset($_SESSION['admin_id']))
             <div class="card-header">
               <div class="card-title">Recent Holdings</div>
               <div class="actions">
-                <a class="btn btn-ghost" href="portfolio.html">Manage</a>
+                <a class="btn btn-ghost" href="portfolio.php">Manage</a>
               </div>
             </div>
 
@@ -119,7 +119,7 @@ if (!isset($_SESSION['admin_id']))
             <div class="card-header">
               <div class="card-title">Quick Research</div>
               <div class="actions">
-                <a class="btn btn-ghost" href="research.html">Open</a>
+                <a class="btn btn-ghost" href="research.php">Open</a>
               </div>
             </div>
 
