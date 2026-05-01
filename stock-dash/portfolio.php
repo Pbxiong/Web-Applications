@@ -63,8 +63,8 @@ if (!isset($_SESSION['admin_id']))
 
         <div class="topbar-right">
           <div class="search">
-            <input id="portfolioSearch" type="text" placeholder="Filter by ticker" />
-            <button id="portfolioSearchClear" class="btn btn-ghost">Clear</button>
+            <input id="portfolioSearch" type="text" placeholder="Search by ticker" />
+            <button id="portfolioSearchClear" class="btn btn-ghost">Search</button>
           </div>
         </div>
       </header>
@@ -103,7 +103,7 @@ if (!isset($_SESSION['admin_id']))
                 <button type="button" class="btn btn-ghost" id="resetBtn">Reset</button>
               </div>
 
-              <div class="muted small">Stored locally in your browser.</div>
+              <div class="muted small">Stored in database.</div>
             </form>
           </div>
 
